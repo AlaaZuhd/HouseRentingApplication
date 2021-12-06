@@ -283,7 +283,7 @@ public class SignupActivity extends AppCompatActivity {
         boolean is_gender_valid = tenant_gender.getSelectedItem().toString().isEmpty() ? false: true;
         boolean is_password_format_valid = Utils.validate_password_format(tenant_password.getText().toString(), 8, 15);
         boolean is_confirm_password_valid = tenant_password.getText().toString().equals(tenant_confirm_password.getText().toString()) ? true : false;
-        boolean is_gross_monthly_salary_valid = Utils.isNumeric(tenant_gross_monthly_salary.getText().toString());
+        boolean is_gross_monthly_salary_valid = Utils.isDoubleNumber(tenant_gross_monthly_salary.getText().toString());
         boolean is_occupation_valid = Utils.validate_name(tenant_occupation.getText().toString(), 1, 20);
         boolean is_family_size_valid = Utils.isNumeric(tenant_family_size.getText().toString());
         boolean is_phone_number_valid = Utils.isNumeric(tenant_phone_number.getText().toString());

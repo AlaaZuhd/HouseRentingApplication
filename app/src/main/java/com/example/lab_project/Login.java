@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -18,6 +20,7 @@ public class Login extends AppCompatActivity {
     EditText password;
     TextView email_error;
     TextView password_error;
+    String editText_default_color;
 
     Intent intent;
 
@@ -44,6 +47,16 @@ public class Login extends AppCompatActivity {
         //RentingAgency new_agency = new RentingAgency("t@gmail.com","Test","321","321","xe","xe","052");
         //dataBaseHelper.insert_renting_agency(new_agency);
 
+        email.setOnKeyListener(new EditText.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (event.getAction() == KeyEvent.ACTION_DOWN && event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
+                    return true;
+                }
+                return false;
+            }
+        });
+
 
         //sign in button handling
         Button sign_in = (Button)findViewById(R.id.login_sign_in_button);
@@ -69,8 +82,9 @@ public class Login extends AppCompatActivity {
                             System.out.println("You can Enter as tenant!");
                             //move to home layout as tenant
                         } else { //wrong password
-                            System.out.println("wrong password for tenant!!!");
-                            password_error.setVisibility(View.VISIBLE);
+                            //password_error.setVisibility(View.VISIBLE);
+                            password.setError("Wrong Password");
+                            password.setBackgroundColor(Color.parseColor("#66FF0000"));
                         }
                         flag = 1;
                     }
@@ -81,15 +95,17 @@ public class Login extends AppCompatActivity {
                                 System.out.println("You can Enter as renting agency!");
                                 //move to home layout as renting agency
                             } else { //wrong password
-                                System.out.println("wrong password for agency!!!");
-                                password_error.setVisibility(View.VISIBLE);
+                                //password_error.setVisibility(View.VISIBLE);
+                                password.setError("Wrong Password");
+                                password.setBackgroundColor(Color.parseColor("#66FF0000"));
                             }
                             flag = 1;
                         }
                     }
                     if (flag == 0){
-                        System.out.println("No such user");
                         email_error.setVisibility(View.VISIBLE);
+                        email.setError("Wrong Email");
+                        email.setBackgroundColor(Color.parseColor("#66FF0000"));
                     }
                 }
                 //if valid->go to home layout
