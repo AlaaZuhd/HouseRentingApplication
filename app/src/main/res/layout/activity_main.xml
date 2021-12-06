@@ -19,6 +19,17 @@
         android:layout_height="wrap_content"
         android:text="Get Started" />
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
+    <ImageView
+        android:id="@+id/imageView_load"
+        android:layout_width="match_parent"
+        android:layout_height="319dp" />
+
     <LinearLayout
         android:id="@+id/layout"
         android:layout_width="match_parent"
