@@ -14,6 +14,10 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.lab_project.models.Tenant;
+
+import java.sql.Date;
+
 public class Login extends AppCompatActivity {
     SharedPrefManager sharedPrefManager;
     EditText email;
@@ -41,11 +45,16 @@ public class Login extends AppCompatActivity {
         }
         DataBaseHelper dataBaseHelper =new DataBaseHelper(Login.this,"Lab_Project.db",null,1);
         //Adding a random tenant:
-        //Tenant new_tenant = new Tenant("test@gmail.com","alaa","rawan","Female","123","123","ads",123,"12",12,"da","asd","052");
+//        Tenant new_tenant = new Tenant("test@gmail.com","alaa","rawan","Female","123","123","ads",123,"12",12,"da","asd","052");
+//        dataBaseHelper.insert_tenant(new_tenant);
         //dataBaseHelper.insert_tenant(new_tenant);
         //Adding a random renting-agency:
         //RentingAgency new_agency = new RentingAgency("t@gmail.com","Test","321","321","xe","xe","052");
         //dataBaseHelper.insert_renting_agency(new_agency);
+//        RentingAgency new_agency = new RentingAgency("ALAA@ALAA.COM","Test","321","321","xe","xe","052");
+//        Property new_property = new Property("Ram",344,34.4,2002,5,20.2,false,true,true, Date.valueOf("2015-03-31"),"hhh",new_agency);
+//        dataBaseHelper.insert_property(new_property);
+
 
         email.setOnKeyListener(new EditText.OnKeyListener() {
             @Override
@@ -73,12 +82,13 @@ public class Login extends AppCompatActivity {
                     password_error.setVisibility(View.VISIBLE);
                 }
                 else {
+                    System.out.println("Email is: " + email.getText().toString() + ", password is: " + password.getText().toString());
                     //Connect to database and get password and compare it
                     //check if a tenant or agency
                     Cursor temp = dataBaseHelper.get_tenant(email.getText().toString());
                     int flag = 0;
                     while (temp.moveToNext()) { //User found
-                        if (password.getText().toString().equals(temp.getString(4))) {
+                        if (password.getText().toString().equals(temp.getString(5))) {
                             System.out.println("You can Enter as tenant!");
                             //move to home layout as tenant
                         } else { //wrong password
@@ -91,7 +101,7 @@ public class Login extends AppCompatActivity {
                     if (flag == 0) {
                         temp = dataBaseHelper.get_renting_agency(email.getText().toString());
                         while (temp.moveToNext()) { //User found
-                            if (password.getText().toString().equals(temp.getString(2))) {
+                            if (password.getText().toString().equals(temp.getString(3))) {
                                 System.out.println("You can Enter as renting agency!");
                                 //move to home layout as renting agency
                             } else { //wrong password

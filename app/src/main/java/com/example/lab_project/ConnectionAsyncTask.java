@@ -2,6 +2,9 @@ package com.example.lab_project;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
+
+import com.example.lab_project.models.Property;
+
 import java.util.List;
 
 public class ConnectionAsyncTask extends AsyncTask<String, String, String> {

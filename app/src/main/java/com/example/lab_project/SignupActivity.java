@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.service.controls.templates.StatelessTemplate;
+import android.os.health.SystemHealthManager;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -13,6 +13,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.Spinner;
+
+import com.example.lab_project.models.RentingAgency;
+import com.example.lab_project.models.Tenant;
+import com.hbb20.CountryCodePicker;
 
 //import com.hbb20.CountryCodePicker;
 
@@ -168,8 +172,14 @@ public class SignupActivity extends AppCompatActivity {
 
 
 
-        //CountryCodePicker ccp = (CountryCodePicker)findViewById(R.id.signup_tenant_ccp);
-        //ccp.getSelectedCountryCode()
+//        CountryCodePicker ccp = (CountryCodePicker)findViewById(R.id.ccp);
+//        System.out.println("CCP: " + ccp.getSelectedCountryCode());
+//        //ccp.setCcpDialogShowNameCode(false);
+//        ccp.setShowPhoneCode(false);
+
+
+
+
 
         // generate all countries
 //        Locale[] locales = Locale.getAvailableLocales();

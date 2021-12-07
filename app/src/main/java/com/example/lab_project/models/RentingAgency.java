@@ -1,4 +1,4 @@
-package com.example.lab_project;
+package com.example.lab_project.models;
 
 public class RentingAgency {
     private String email_address;
@@ -8,6 +8,7 @@ public class RentingAgency {
     private String country;
     private String city;
     private String phone_number;
+    private int renting_agency_id;
     //Constructors
 
     public RentingAgency() {
@@ -77,6 +78,14 @@ public class RentingAgency {
 
     public void setPhone_number(String phone_number) {
         this.phone_number = phone_number;
+    }
+
+    public int getRenting_agency_id() {
+        return renting_agency_id;
+    }
+
+    public void setRenting_agency_id(int renting_agency_id) {
+        this.renting_agency_id = renting_agency_id;
     }
 
     //toString method

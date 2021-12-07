@@ -19,6 +19,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.example.lab_project.models.Property;
+
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
@@ -117,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
             imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
             // need this steps to tore them in the data base.
             bmp_images.add(BitmapFactory.decodeFile(picturePath));
+
             bmp_images.get(0).compress(Bitmap.CompressFormat.PNG, 100, image_output_stream.get(0));
             images_bytes.add(image_output_stream.get(0).toByteArray());
         }
