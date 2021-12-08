@@ -72,6 +72,13 @@ public class Login extends AppCompatActivity {
         sign_in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                Cursor tempp = dataBaseHelper.get_all_renting_agencies();
+                while (tempp.moveToNext()) { //User found
+                    System.out.println("Email: " + tempp.getString(0) + ", password: " + tempp.getString(2));
+                }
+
+
                 email_error.setVisibility(View.INVISIBLE);
                 password_error.setVisibility(View.INVISIBLE);
 
@@ -88,7 +95,7 @@ public class Login extends AppCompatActivity {
                     Cursor temp = dataBaseHelper.get_tenant(email.getText().toString());
                     int flag = 0;
                     while (temp.moveToNext()) { //User found
-                        if (password.getText().toString().equals(temp.getString(5))) {
+                        if (password.getText().toString().equals(temp.getString(4))) {
                             System.out.println("You can Enter as tenant!");
                             //move to home layout as tenant
                         } else { //wrong password
@@ -101,7 +108,7 @@ public class Login extends AppCompatActivity {
                     if (flag == 0) {
                         temp = dataBaseHelper.get_renting_agency(email.getText().toString());
                         while (temp.moveToNext()) { //User found
-                            if (password.getText().toString().equals(temp.getString(3))) {
+                            if (password.getText().toString().equals(temp.getString(2))) {
                                 System.out.println("You can Enter as renting agency!");
                                 //move to home layout as renting agency
                             } else { //wrong password

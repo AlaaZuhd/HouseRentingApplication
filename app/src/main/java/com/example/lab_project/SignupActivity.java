@@ -16,7 +16,7 @@ import android.widget.Spinner;
 
 import com.example.lab_project.models.RentingAgency;
 import com.example.lab_project.models.Tenant;
-import com.hbb20.CountryCodePicker;
+//import com.hbb20.CountryCodePicker;
 
 //import com.hbb20.CountryCodePicker;
 
@@ -66,9 +66,6 @@ public class SignupActivity extends AppCompatActivity {
     int index =0;
 
     DataBaseHelper dataBaseHelper =new DataBaseHelper(SignupActivity.this,"Lab_Project.db",null,1);
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -194,9 +191,6 @@ public class SignupActivity extends AppCompatActivity {
 //        for (String country : countries) {
 //            System.out.println(country);
 //        }
-
-
-
 
 
         signup_as_tenant.setOnClickListener(new View.OnClickListener() {

@@ -14,7 +14,7 @@ public class Tenant {
     private String current_country;
     private String city;
     private String phone_number;
-    private int tenant;
+    private int tenant_id;// remove it later
 
     //Constructors
 
@@ -141,12 +141,12 @@ public class Tenant {
         this.phone_number = phone_number;
     }
 
-    public int getTenant() {
-        return tenant;
+    public int getTenant_id() {
+        return tenant_id;
     }
 
-    public void setTenant(int tenant) {
-        this.tenant = tenant;
+    public void setTenant_id(int tenant_id) {
+        this.tenant_id = tenant_id;
     }
 
     //toString method

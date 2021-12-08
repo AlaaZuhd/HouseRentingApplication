@@ -18,8 +18,7 @@ import java.io.ByteArrayOutputStream;
 public class DataBaseHelper extends SQLiteOpenHelper {
 
     String create_tenant_table_statement =              "CREATE TABLE TENANT(" +
-                                                        "TENANT_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                                                        "EMAIL_ADDRESS TEXT NOT NULL UNIQUE," +
+                                                        "EMAIL_ADDRESS TEXT PRIMARY KEY," +
                                                         "FIRST_NAME TEXT," +
                                                         "LAST_NAME TEXT," +
                                                         "GENDER TEXT," +
@@ -32,8 +31,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                                                         "CITY TEXT," +
                                                         "PHONE_NUMBER TEXT)";
     String create_renting_agency_table_statement =      "CREATE TABLE RENTING_AGENCY(" +
-                                                        "RENTING_AGENCY_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                                                        "EMAIL_ADDRESS TEXT NOT NULL UNIQUE," +
+                                                        "EMAIL_ADDRESS TEXT PRIMARY KEY," +
                                                         "NAME TEXT," +
                                                         "PASSWORD TEXT," +
                                                         "COUNTRY TEXT," +
@@ -52,14 +50,22 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                                                         "GARDEN BOOLEAN," +
                                                         "AVAILABILITY_DATE TEXT, " +
                                                         "DESCRIPTION TEXT, " +
-                                                        "REFERENCES RENTING_AGENCY (RENTING_AGENCY_ID) ON DELETE SET CASCADE, " +
-                                                        "PROPERTY_OWNER TEXT)";
+                                                        "RENTING_AGENCY_EMAIL_ADDRESS TEXT," +
+                                                        "FOREIGN KEY (RENTING_AGENCY_EMAIL_ADDRESS) REFERENCES RENTING_AGENCY (EMAIL_ADDRESS))";
     String create_property_image_table_statement =      "CREATE TABLE PROPERTY_IMAGE(" +
                                                         "PROPERTY_IMAGE_ID INTEGER PRIMARY KEY AUTOINCREMENT," +
                                                         "IMAGE_NAME TEXT," +
                                                         "IMAGE BLOB," +
                                                         "PROPERTY_ID INTEGER, " +
-                                                        "REFERENCES PROPERTY (PROPERTY_ID) ON DELETE SET CASCADE)";
+                                                        "FOREIGN KEY (PROPERTY_ID) REFERENCES PROPERTY (PROPERTY_ID))";
+    String create_tenant_property_table_statement =     "CREATE TABLE TENANT_PROPERTY(" +
+                                                        "TENANT_ID TEXT," +
+                                                        "PROPERTY_ID INTEGER," +
+                                                        "START_DATE TEXT," +
+                                                        "END_DATE TEXT, " +
+                                                        "FOREIGN KEY (TENANT_ID) REFERENCES TENANT (EMAIL_ADDRESS)," +
+                                                        "FOREIGN KEY (PROPERTY_ID) REFERENCES PROPERTY (PROPERTY_ID)," +
+                                                        "PRIMARY KEY(TENANT_ID, PROPERTY_ID, START_DATE, END_DATE)";
 
     public DataBaseHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -72,21 +78,25 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         create_table(create_renting_agency_table_statement, sqLiteDatabase);
         create_table(create_property_table_statement, sqLiteDatabase);
         create_table(create_property_image_table_statement, sqLiteDatabase);
+        create_table(create_tenant_property_table_statement, sqLiteDatabase);
         System.out.println("CREATING TABLES DONE SUCESSFULLY");
     }
 
     @Override
     public void onOpen(SQLiteDatabase sqLiteDatabase){
-        //sqLiteDatabase.execSQL("DROP TABLE IF EXISTS TENANT");
-        //sqLiteDatabase.execSQL("DROP TABLE IF EXISTS RENTING_AGENCY");
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS PROPERTY");
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS PROPERTY_IMAGE");
-        System.out.println("CREATING TABLE WILL STRAT NOW ->");
-        //create_table(create_tenant_table_statement, sqLiteDatabase);
-        //create_table(create_renting_agency_table_statement, sqLiteDatabase);
+//        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS TENANT");
+//        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS RENTING_AGENCY");
+//        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS PROPERTY");
+//        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS PROPERTY_IMAGE");
+//        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS TENANT_PROPERTY");
+//        System.out.println("CREATING TABLE WILL STRAT NOW ->");
+//        create_table(create_tenant_table_statement, sqLiteDatabase);
+//        create_table(create_renting_agency_table_statement, sqLiteDatabase);
 //        create_table(create_property_table_statement, sqLiteDatabase);
 //        create_table(create_property_image_table_statement, sqLiteDatabase);
-        System.out.println("CREATING TABLES DONE SUCESSFULLY");
+//        create_table(create_tenant_property_table_statement, sqLiteDatabase);
+
+//        System.out.println("CREATING TABLES DONE SUCESSFULLY");
 
     }
 
@@ -121,7 +131,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         int recorde_id = (int)sqLiteDatabase.insert("TENANT", null, contentValues);
         System.out.println("Record id for the inserted tenant is: " + recorde_id);
         if(recorde_id != -1)
-            tenant.setTenant(recorde_id);
+            tenant.setTenant_id(recorde_id);
         else{
             // show toast message for the probelm
         }
