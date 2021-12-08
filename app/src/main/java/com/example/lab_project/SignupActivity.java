@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.health.SystemHealthManager;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -109,7 +108,7 @@ public class SignupActivity extends AppCompatActivity {
         objArr = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item, current_residence_country_options);
         tenant_current_residence_country.setAdapter(objArr);
 
-        tenant_city = (Spinner)findViewById(R.id.signup_tenant_city_spinner);
+        tenant_city = (Spinner)findViewById(R.id.search_city_spinner);
         objArr = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item, city_options[0]);
         tenant_city.setAdapter(objArr);
         // ----------------------------------------------------------------------------------------------------//
@@ -236,7 +235,7 @@ public class SignupActivity extends AppCompatActivity {
                                         tenant_phone_number.getText().toString());
                     dataBaseHelper.insert_tenant(new_tenant);
                     // go into the login page,
-                    intent = new Intent(SignupActivity.this, Login.class);
+                    intent = new Intent(SignupActivity.this, LoginActivity.class);
                     startActivity(intent);
                     finish(); // finish the current activity so user can't back to it again.
                 }
@@ -258,7 +257,7 @@ public class SignupActivity extends AppCompatActivity {
                                                         renting_agency_phone_number.getText().toString());
                     dataBaseHelper.insert_renting_agency(new_renting_agency);
                     // go into the login page,
-                    intent = new Intent(SignupActivity.this, Login.class);
+                    intent = new Intent(SignupActivity.this, LoginActivity.class);
                     startActivity(intent);
                     finish(); // finish the current activity so user can't back to it again.
                 }

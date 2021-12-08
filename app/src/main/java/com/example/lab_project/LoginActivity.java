@@ -12,18 +12,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.TextView;
 
-import com.example.lab_project.models.Tenant;
-
-import java.sql.Date;
-
-public class Login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     SharedPrefManager sharedPrefManager;
     EditText email;
     EditText password;
-    TextView email_error;
-    TextView password_error;
     String editText_default_color;
 
     Intent intent;
@@ -36,14 +29,12 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         email=(EditText) findViewById(R.id.login_email);
         password=(EditText)findViewById(R.id.login_password);
-        email_error=(TextView)findViewById(R.id.login_email_error_label);
-        password_error=(TextView)findViewById(R.id.login_password_error_label);
         //If there are any email in the shared preference-> display it
         String shared_pref_email = sharedPrefManager.readString("email_address","noValue");
         if (!shared_pref_email.equals("noValue")){
             email.setText(shared_pref_email);
         }
-        DataBaseHelper dataBaseHelper =new DataBaseHelper(Login.this,"Lab_Project.db",null,1);
+        DataBaseHelper dataBaseHelper =new DataBaseHelper(LoginActivity.this,"Lab_Project.db",null,1);
         //Adding a random tenant:
 //        Tenant new_tenant = new Tenant("test@gmail.com","alaa","rawan","Female","123","123","ads",123,"12",12,"da","asd","052");
 //        dataBaseHelper.insert_tenant(new_tenant);
@@ -79,14 +70,11 @@ public class Login extends AppCompatActivity {
                 }
 
 
-                email_error.setVisibility(View.INVISIBLE);
-                password_error.setVisibility(View.INVISIBLE);
-
                 if(email.getText().toString().equals("")){
-                    email_error.setVisibility(View.VISIBLE);
+                    email.setError("Wrong Email");
                 }
                 if (password.getText().toString().equals("")){
-                    password_error.setVisibility(View.VISIBLE);
+                    password.setError("Wrong Password");
                 }
                 else {
                     System.out.println("Email is: " + email.getText().toString() + ", password is: " + password.getText().toString());
@@ -98,6 +86,9 @@ public class Login extends AppCompatActivity {
                         if (password.getText().toString().equals(temp.getString(4))) {
                             System.out.println("You can Enter as tenant!");
                             //move to home layout as tenant
+                            intent = new Intent(LoginActivity.this, NavigationDrawerActivity.class);
+                            LoginActivity.this.startActivity(intent);
+                            LoginActivity.this.finish();
                         } else { //wrong password
                             //password_error.setVisibility(View.VISIBLE);
                             password.setError("Wrong Password");
@@ -111,6 +102,9 @@ public class Login extends AppCompatActivity {
                             if (password.getText().toString().equals(temp.getString(2))) {
                                 System.out.println("You can Enter as renting agency!");
                                 //move to home layout as renting agency
+                                intent = new Intent(LoginActivity.this, NavigationDrawerActivity.class);
+                                LoginActivity.this.startActivity(intent);
+                                LoginActivity.this.finish();
                             } else { //wrong password
                                 //password_error.setVisibility(View.VISIBLE);
                                 password.setError("Wrong Password");
@@ -120,7 +114,6 @@ public class Login extends AppCompatActivity {
                         }
                     }
                     if (flag == 0){
-                        email_error.setVisibility(View.VISIBLE);
                         email.setError("Wrong Email");
                         email.setBackgroundColor(Color.parseColor("#66FF0000"));
                     }
@@ -134,9 +127,9 @@ public class Login extends AppCompatActivity {
         sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                intent = new Intent(Login.this, SignupActivity.class);
-                Login.this.startActivity(intent);
-                Login.this.finish();
+                intent = new Intent(LoginActivity.this, SignupActivity.class);
+                LoginActivity.this.startActivity(intent);
+                LoginActivity.this.finish();
             }
         });
     }

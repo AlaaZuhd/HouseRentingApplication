@@ -55,7 +55,7 @@ public class Property {
         this.property_owner = property_owner;
     }
 
-    public Property(String city, int postal_address, double surface_area, int construction_year, int number_of_bedrooms, double rental_price, boolean status, boolean balcony, boolean garden, Date availability_date, String description, RentingAgency property_owner, int property_id, String renting_agency_owner_id) {
+    public Property(String city, int postal_address, double surface_area, int construction_year, int number_of_bedrooms, double rental_price, boolean status, boolean balcony, boolean garden, Date availability_date, String description, String renting_agency_owner_id) {
         this.city = city;
         this.postal_address = postal_address;
         this.surface_area = surface_area;

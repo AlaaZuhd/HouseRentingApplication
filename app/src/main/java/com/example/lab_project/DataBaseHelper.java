@@ -219,5 +219,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return sqLiteDatabase.rawQuery("SELECT * FROM RENTING_AGENCY WHERE EMAIL_ADDRESS=\""+email+"\"",null);
     }
 
+    public Cursor get_most_up_to_five_added_properties(){
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+        return sqLiteDatabase.rawQuery("SELECT * FROM PROPERTY ORDER BY PROPERTY_ID DESC LIMIT 5",null);
+    }
+
 }
 

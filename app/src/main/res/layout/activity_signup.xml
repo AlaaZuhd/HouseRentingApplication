@@ -8,430 +8,458 @@
     android:padding="20dp"
     tools:context=".SignupActivity">
 
-    <TextView
-        android:id="@+id/signup_textView"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Sign up as"
-        android:textSize="34sp" />
+        android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/signup_tenant_button"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Tenant"
-            android:textSize="24sp" />
+            android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/signup_renting_agency_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Renting Agency"
-            android:textSize="24sp" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/signup_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Sign up as"
+                android:textSize="18sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/signup_tenant_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tenant"
+                    android:textSize="18sp"
+                    android:layout_alignParentLeft="true"/>
+
+                <Button
+                    android:id="@+id/signup_renting_agency_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Renting Agency"
+                    android:textSize="18sp"
+                    android:layout_alignParentRight="true"/>
+
+            </RelativeLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ScrollView
+                        android:id="@+id/signup_tenant_scrollView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            tools:ignore="MissingClass">
+                            <!--                <com.hbb20.CountryCodePicker-->
+                            <!--                    android:id="@+id/ccp"-->
+                            <!--                    android:layout_width="wrap_content"-->
+                            <!--                    android:layout_height="wrap_content"-->
+
+                            <!--                    />-->
+
+
+                            <EditText
+                                android:id="@+id/signup_tenant_email"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="20dp"
+                                android:ems="10"
+                                android:hint="E-mail"
+                                android:inputType="textEmailAddress"
+                                android:textSize="18sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <EditText
+                                    android:id="@+id/signup_tenant_name_editText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginRight="20dp"
+                                    android:ems="10"
+                                    android:hint="First Name"
+                                    android:inputType="textPersonName"
+                                    android:textSize="18sp" />
+
+                                <EditText
+                                    android:id="@+id/singup_tenant_last_name_editText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginRight="20dp"
+                                    android:ems="10"
+                                    android:hint="Last Name"
+                                    android:inputType="textPersonName"
+                                    android:textSize="18sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/signup_gender_tenant_textView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginRight="20dp"
+                                    android:layout_weight="1"
+                                    android:text="Gender" />
+
+                                <Spinner
+                                    android:id="@+id/signup_tenant_gender_spinner"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginRight="20dp"
+                                    android:layout_weight="1" />
+                            </LinearLayout>
+
+                            <EditText
+                                android:id="@+id/signup_tenant_password_editText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="20dp"
+                                android:ems="10"
+                                android:hint="Password"
+                                android:inputType="textPassword"
+                                android:textSize="18sp" />
+
+                            <EditText
+                                android:id="@+id/signup_tenant_confirm_password_editText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="20dp"
+                                android:ems="10"
+                                android:hint="Confirm Password"
+                                android:inputType="textPassword"
+                                android:textSize="18sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/signup_tenant_nationality_textView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginRight="20dp"
+                                    android:layout_weight="1"
+                                    android:text="TextView"
+                                    android:textSize="18sp" />
+
+                                <Spinner
+                                    android:id="@+id/signup_tenant_nationality_spinner"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginRight="20dp"
+                                    android:layout_weight="1" />
+                            </LinearLayout>
+
+                            <EditText
+                                android:id="@+id/signup_tenant_gross_monthly_salary_editText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="20dp"
+                                android:ems="10"
+                                android:hint="Gross monthly salary"
+                                android:inputType="numberDecimal"
+                                android:textSize="18sp" />
+
+                            <EditText
+                                android:id="@+id/signup_tenant_occupation_editText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="20dp"
+                                android:ems="10"
+                                android:hint="Occupation"
+                                android:inputType="textPersonName"
+                                android:text="Name"
+                                android:textSize="18sp" />
+
+                            <EditText
+                                android:id="@+id/signup_tenant_family_size_editText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="20dp"
+                                android:ems="10"
+                                android:hint="Family Size"
+                                android:inputType="numberDecimal"
+                                android:textSize="18sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/signup_tenant_country_textView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginRight="20dp"
+                                    android:layout_weight="1"
+                                    android:text="Current Residence Country"
+                                    android:textSize="18sp" />
+
+                                <Spinner
+                                    android:id="@+id/signup_tenant_country_spinner"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginRight="20dp"
+                                    android:layout_weight="1" />
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/search_city_textView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginRight="20dp"
+                                    android:layout_weight="1"
+                                    android:text="City"
+                                    android:textSize="18sp" />
+
+                                <Spinner
+                                    android:id="@+id/search_city_spinner"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginRight="20dp"
+                                    android:layout_weight="1" />
+                            </LinearLayout>
+
+                            <EditText
+                                android:id="@+id/signup_tenant_phone_number_editText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="20dp"
+                                android:ems="10"
+                                android:hint="Phone Number"
+                                android:inputType="phone"
+                                android:textSize="18sp" />
+
+
+                            <Button
+                                android:id="@+id/signup_tenant_create_account_button"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="20dp"
+                                android:text="Create Acount"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+                    </ScrollView>
+
+                    <ScrollView
+                        android:id="@+id/signup_renting_agency_scrollView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            tools:ignore="MissingClass">
+
+
+                            <EditText
+                                android:id="@+id/signup_renting_agency_email"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="20dp"
+                                android:ems="10"
+                                android:hint="E-mail"
+                                android:inputType="textEmailAddress"
+                                android:textSize="18sp" />
+
+                            <EditText
+                                android:id="@+id/signup_renting_agency_name_editText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="20dp"
+                                android:ems="10"
+                                android:hint="Full Name"
+                                android:inputType="textPersonName"
+                                android:textSize="18sp" />
+
+                            <EditText
+                                android:id="@+id/signup_renting_agency_password_editText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="20dp"
+                                android:ems="10"
+                                android:hint="Password"
+                                android:inputType="textPassword"
+                                android:textSize="18sp" />
+
+                            <EditText
+                                android:id="@+id/signup_renting_agency_confirm_password_editText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="20dp"
+                                android:ems="10"
+                                android:hint="Confirm Password"
+                                android:inputType="textPassword"
+                                android:textSize="18sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/signup_renting_agency_country_textView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginRight="20dp"
+                                    android:layout_weight="1"
+                                    android:text="Country"
+                                    android:textSize="18sp" />
+
+                                <Spinner
+                                    android:id="@+id/signup_renting_agency_country_spinner"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/signup_renting_agency_city_textView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginRight="20dp"
+                                    android:layout_weight="1"
+                                    android:text="City"
+                                    android:textSize="18sp" />
+
+                                <Spinner
+                                    android:id="@+id/signup_renting_agency_city_spinner"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+                            </LinearLayout>
+
+
+                            <EditText
+                                android:id="@+id/signup_renting_agency_phone_number_editText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="20dp"
+                                android:ems="10"
+                                android:hint="Phhone Number"
+                                android:inputType="phone"
+                                android:textSize="18sp" />
+
+                            <Button
+                                android:id="@+id/signup_renting_agency_create_account_button"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="20dp"
+                                android:text="Create Acount"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+                    </ScrollView>
+
+
+                </LinearLayout>
+            </ScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:drawableStart="@drawable/signup_accept_policy_icon"
+                    android:id="@+id/signup_accept_terms_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="By signing up you agree to the terms of service and privacy policy." />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
     <!--For tenant sing-up form-->
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <ScrollView
-            android:id="@+id/signup_tenant_scrollView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                tools:ignore="MissingClass">
-<!--                <com.hbb20.CountryCodePicker-->
-<!--                    android:id="@+id/ccp"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-
-<!--                    />-->
-
-                <TextView
-                    android:id="@+id/sigup_tenant_email_address_textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Email address"
-                    android:textSize="24sp" />
-
-
-                <EditText
-                    android:id="@+id/signup_tenant_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Enter your email address"
-                    android:inputType="textEmailAddress"
-                    android:textSize="24sp" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/singup_tennat_name_textView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="First name"
-                            android:textSize="24sp" />
-
-                        <EditText
-                            android:id="@+id/signup_tenant_name_editText"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:ems="10"
-                            android:hint="First Name"
-                            android:inputType="textPersonName"
-                            android:textSize="24sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/singup_tenant_last_name_textView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Last Name"
-                            android:textSize="24sp" />
-
-                        <EditText
-                            android:id="@+id/singup_tenant_last_name_editText"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:ems="10"
-                            android:hint="Last Name"
-                            android:inputType="textPersonName"
-                            android:textSize="24sp" />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/signup_gender_tenant_textView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Gender" />
-
-                    <Spinner
-                        android:id="@+id/signup_tenant_gender_spinner"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/signup_tenant_password_textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Password" />
-
-                <EditText
-                    android:id="@+id/signup_tenant_password_editText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPassword" />
-
-                <TextView
-                    android:id="@+id/signup_tenant_confirm_password_textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Confirm Password" />
-
-                <EditText
-                    android:id="@+id/signup_tenant_confirm_password_editText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Confirm password"
-                    android:inputType="textPassword" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/signup_tenant_nationality_textView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="TextView" />
-
-                    <Spinner
-                        android:id="@+id/signup_tenant_nationality_spinner"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/signup_tenant_gross_monthly_salary_textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Gross Monthly Salary" />
-
-                <EditText
-                    android:id="@+id/signup_tenant_gross_monthly_salary_editText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="enter your gross monthlu salary"
-                    android:inputType="numberDecimal" />
-
-                <TextView
-                    android:id="@+id/signup_tenant_occupation_textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Ocuupation" />
-
-                <EditText
-                    android:id="@+id/signup_tenant_occupation_editText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Name" />
-
-                <TextView
-                    android:id="@+id/signup_tenant_family_size_textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Family Size" />
-
-                <EditText
-                    android:id="@+id/signup_tenant_family_size_editText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="numberDecimal" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/signup_tenant_country_textView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Current Residence Country" />
-
-                    <Spinner
-                        android:id="@+id/signup_tenant_country_spinner"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/signup_tenant_city_textView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="City" />
-
-                    <Spinner
-                        android:id="@+id/signup_tenant_city_spinner"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/signup_tenant_phone_number_textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="TextView" />
-
-
-                <EditText
-                    android:id="@+id/signup_tenant_phone_number_editText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="phone" />
-
-
-                <Button
-                    android:id="@+id/signup_tenant_create_account_button"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Create Acount" />
-
-            </LinearLayout>
-        </ScrollView>
-
-        <ScrollView
-            android:id="@+id/signup_renting_agency_scrollView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                tools:ignore="MissingClass">
-
-                <TextView
-                    android:id="@+id/signup__renting_agency_email_address_textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Email address"
-                    android:textSize="24sp" />
-
-
-                <EditText
-                    android:id="@+id/signup_renting_agency_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Enter your email address"
-                    android:inputType="textEmailAddress"
-                    android:textSize="24sp" />
-
-                <TextView
-                    android:id="@+id/singup_renting_agency_name_textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="First name"
-                    android:textSize="24sp" />
-
-                <EditText
-                    android:id="@+id/signup_renting_agency_name_editText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="First Name"
-                    android:inputType="textPersonName"
-                    android:textSize="24sp" />
-
-                <TextView
-                    android:id="@+id/signup_renting_agency_password_textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Password" />
-
-                <EditText
-                    android:id="@+id/signup_renting_agency_password_editText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPassword" />
-
-                <TextView
-                    android:id="@+id/signup_renting_agency_confirm_password_textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Confirm Password" />
-
-                <EditText
-                    android:id="@+id/signup_renting_agency_confirm_password_editText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Confirm password"
-                    android:inputType="textPassword" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/signup_renting_agency_country_textView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Country" />
-
-                    <Spinner
-                        android:id="@+id/signup_renting_agency_country_spinner"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/signup_renting_agency_city_textView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="City" />
-
-                    <Spinner
-                        android:id="@+id/signup_renting_agency_city_spinner"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/signup_renting_agency_phone_number_textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="TextView" />
-
-
-                <EditText
-                    android:id="@+id/signup_renting_agency_phone_number_editText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="phone" />
-
-                <Button
-                    android:id="@+id/signup_renting_agency_create_account_button"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Create Acount" />
-
-            </LinearLayout>
-        </ScrollView>
-
-
-    </LinearLayout>
 
 
     <!--For renting agency sing-up form-->

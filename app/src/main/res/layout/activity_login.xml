@@ -5,70 +5,109 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Login">
+    android:padding="5dp"
+    tools:context=".LoginActivity">
 
-    <EditText
-        android:id="@+id/login_email"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Enter Email"
-        android:inputType="textEmailAddress" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/login_email_error_label"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Wrong Email "
-        android:textColor="#F40404"
-        android:visibility="invisible" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/login_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Enter Password"
-        android:inputType="textPassword" />
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="257dp" />
 
-    <TextView
-        android:id="@+id/login_password_error_label"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Wrong Password"
-        android:textColor="#F80303"
-        android:visibility="invisible" />
+            <EditText
+                android:id="@+id/login_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:ems="10"
+                android:hint="Enter Email"
+                android:inputType="textEmailAddress"
+                android:padding="5dp" />
 
-    <CheckBox
-        android:id="@+id/login_remember_me_check_box"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Remember Me"
-        android:onClick="OnRememberMeClicked"/>
+            <EditText
+                android:id="@+id/login_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:ems="10"
+                android:hint="Enter Password"
+                android:inputType="textPassword"
+                android:padding="5dp" />
 
-    <Button
-        android:id="@+id/login_sign_in_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Sign In" />
+            <CheckBox
+                android:id="@+id/login_remember_me_check_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:onClick="OnRememberMeClicked"
+                android:padding="5dp"
+                android:text="Remember Me" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Don't have an account yet?" />
+            <Button
+                android:id="@+id/login_sign_in_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:padding="5dp"
+                android:text="Sign In" />
 
-    <Button
-        android:id="@+id/login_sign_up_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="SIGN UP" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/login_search_button"
-        style="@style/Widget.MaterialComponents.Button.Icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:icon="@drawable/search" />
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="3dp"
+                    android:padding="5dp"
+                    android:text="Don't have an account yet?" />
+
+                <Button
+                    android:id="@+id/login_sign_up_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="#800000"
+                    android:padding="5dp"
+                    android:text="SIGN UP" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/login_search_button"
+                style="@style/Widget.MaterialComponents.Button.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:padding="5dp"
+                app:icon="@drawable/search" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
