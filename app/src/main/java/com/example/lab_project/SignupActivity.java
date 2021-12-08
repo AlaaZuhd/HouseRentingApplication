@@ -16,7 +16,7 @@ import android.widget.Spinner;
 
 import com.example.lab_project.models.RentingAgency;
 import com.example.lab_project.models.Tenant;
-import com.hbb20.CountryCodePicker;
+//import com.hbb20.CountryCodePicker;
 
 //import com.hbb20.CountryCodePicker;
 

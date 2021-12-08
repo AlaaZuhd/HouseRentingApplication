@@ -8,7 +8,7 @@ public class RentingAgency {
     private String country;
     private String city;
     private String phone_number;
-    private int renting_agency_id;
+    private int renting_agency_id;// remove it later
     //Constructors
 
     public RentingAgency() {

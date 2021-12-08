@@ -14,13 +14,11 @@ public class Property {
     private boolean status;     //finished or not
     private boolean balcony;
     private boolean garden;
-    //photo
     private Date availability_date;
     private String description;
     private RentingAgency property_owner;
     private int property_id;
-    private int renting_agency_owner_id;
-    private RentingAgency renting_agency_owner;
+    private String renting_agency_owner_id;
 
     //Constructors
     public Property() {
@@ -57,7 +55,7 @@ public class Property {
         this.property_owner = property_owner;
     }
 
-    public Property(String city, int postal_address, double surface_area, int construction_year, int number_of_bedrooms, double rental_price, boolean status, boolean balcony, boolean garden, Date availability_date, String description, RentingAgency property_owner, int property_id, int renting_agency_owner_id) {
+    public Property(String city, int postal_address, double surface_area, int construction_year, int number_of_bedrooms, double rental_price, boolean status, boolean balcony, boolean garden, Date availability_date, String description, RentingAgency property_owner, int property_id, String renting_agency_owner_id) {
         this.city = city;
         this.postal_address = postal_address;
         this.surface_area = surface_area;
@@ -74,43 +72,19 @@ public class Property {
         this.renting_agency_owner_id = renting_agency_owner_id;
     }
 
-    public Property(String city, int postal_address, double surface_area, int construction_year, int number_of_bedrooms, double rental_price, boolean status, boolean balcony, boolean garden, Date availability_date, String description, RentingAgency property_owner, int property_id, int renting_agency_owner_id, RentingAgency renting_agency_owner) {
-        this.city = city;
-        this.postal_address = postal_address;
-        this.surface_area = surface_area;
-        this.construction_year = construction_year;
-        this.number_of_bedrooms = number_of_bedrooms;
-        this.rental_price = rental_price;
-        this.status = status;
-        this.balcony = balcony;
-        this.garden = garden;
-        this.availability_date = availability_date;
-        this.description = description;
-        this.property_owner = property_owner;
-        this.property_id = property_id;
-        this.renting_agency_owner_id = renting_agency_owner_id;
-        this.renting_agency_owner = renting_agency_owner;
-    }
 
     public void setAvailability_date(Date availability_date) {
         this.availability_date = availability_date;
     }
 
-    public int getRenting_agency_owner_id() {
+    public String getRenting_agency_owner_id() {
         return renting_agency_owner_id;
     }
 
-    public void setRenting_agency_owner_id(int renting_agency_owner_id) {
+    public void setRenting_agency_owner_id(String renting_agency_owner_id) {
         this.renting_agency_owner_id = renting_agency_owner_id;
     }
 
-    public RentingAgency getRenting_agency_owner() {
-        return renting_agency_owner;
-    }
-
-    public void setRenting_agency_owner(RentingAgency renting_agency_owner) {
-        this.renting_agency_owner = renting_agency_owner;
-    }
 
     //Getters and Setters
     public String getCity() {
