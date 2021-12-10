@@ -83,10 +83,15 @@ public class LoginActivity extends AppCompatActivity {
                     Cursor temp = dataBaseHelper.get_tenant(email.getText().toString());
                     int flag = 0;
                     while (temp.moveToNext()) { //User found
+                        System.out.println("Tenant");
                         if (password.getText().toString().equals(temp.getString(4))) {
                             System.out.println("You can Enter as tenant!");
                             //move to home layout as tenant
-                            intent = new Intent(LoginActivity.this, NavigationDrawerActivity.class);
+//                            intent = new Intent(LoginActivity.this, NavigationDrawerActivity.class);
+//                            LoginActivity.this.startActivity(intent);
+//                            LoginActivity.this.finish();
+
+                            intent = new Intent(LoginActivity.this, HomeActivity.class);
                             LoginActivity.this.startActivity(intent);
                             LoginActivity.this.finish();
                         } else { //wrong password
@@ -97,12 +102,17 @@ public class LoginActivity extends AppCompatActivity {
                         flag = 1;
                     }
                     if (flag == 0) {
+                        System.out.println("renting agency");
                         temp = dataBaseHelper.get_renting_agency(email.getText().toString());
                         while (temp.moveToNext()) { //User found
+                            System.out.println("pass: "+ password.getText().toString() + ", real pass: " + temp.getString(2));
                             if (password.getText().toString().equals(temp.getString(2))) {
                                 System.out.println("You can Enter as renting agency!");
                                 //move to home layout as renting agency
-                                intent = new Intent(LoginActivity.this, NavigationDrawerActivity.class);
+//                                intent = new Intent(LoginActivity.this, NavigationDrawerActivity.class);
+//                                LoginActivity.this.startActivity(intent);
+//                                LoginActivity.this.finish();
+                                intent = new Intent(LoginActivity.this, HomeActivity.class);
                                 LoginActivity.this.startActivity(intent);
                                 LoginActivity.this.finish();
                             } else { //wrong password

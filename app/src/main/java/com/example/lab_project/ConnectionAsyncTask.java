@@ -25,7 +25,7 @@ public class ConnectionAsyncTask extends AsyncTask<String, String, String> {
     }
     @Override
     protected void onPostExecute(String s) {
-        intent = new Intent((MainActivity)activity, NavigationDrawerActivity.class);
+        intent = new Intent((MainActivity)activity, LoginActivity.class);
         if (s == null) {
             System.out.println("------In post");
         } else {

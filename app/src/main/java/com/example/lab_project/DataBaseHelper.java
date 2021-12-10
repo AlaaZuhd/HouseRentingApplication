@@ -168,7 +168,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         contentValues.put("GARDEN", property.isGarden());
         contentValues.put("AVAILABILITY_DATE", property.getAvailability_date().toString());
         contentValues.put("DESCRIPTION", property.getDescription());
-        contentValues.put("PROPERTY_OWNER", property.getProperty_owner().getEmail_address());
+        contentValues.put("RENTING_AGENCY_EMAIL_ADDRESS", property.getRenting_agency_owner_id());
 
         int recorde_id = (int)sqLiteDatabase.insert("PROPERTY", null, contentValues);
         if(recorde_id != -1)
@@ -180,15 +180,19 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     public void insert_property_image(Image image) {
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
-        ByteArrayOutputStream image_output_stream = null;
-        byte[] image_bytes = new byte[]{};
-        image.getImage().compress(Bitmap.CompressFormat.PNG, 100, image_output_stream);
-        image_bytes = image_output_stream.toByteArray();
+        //ByteArrayOutputStream image_output_stream = null;
+        //byte[] image_bytes = new byte[]{};
+        //image.getImage().compress(Bitmap.CompressFormat.PNG, 100, image_output_stream);
+        //image_bytes = image_output_stream.toByteArray();
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        image.getImage().compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] imageInByte = baos.toByteArray();
 
         ContentValues contentValues = new ContentValues();
         contentValues.put("IMAGE_NAME", image.getImage_name());
-        contentValues.put("IMAGE", image_bytes);
-        contentValues.put("PROPERTY", image.getProperty().getProperty_id());
+        contentValues.put("IMAGE", imageInByte);
+        contentValues.put("PROPERTY_ID", image.getProperty_id());
 
         int recorde_id = (int)sqLiteDatabase.insert("PROPERTY_IMAGE", null, contentValues);
         if(recorde_id != -1)
@@ -222,6 +226,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public Cursor get_most_up_to_five_added_properties(){
         SQLiteDatabase sqLiteDatabase = getReadableDatabase();
         return sqLiteDatabase.rawQuery("SELECT * FROM PROPERTY ORDER BY PROPERTY_ID DESC LIMIT 5",null);
+    }
+
+    public Cursor get_one_image_for_property(Integer property_id){
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+        return sqLiteDatabase.rawQuery("SELECT IMAGE FROM PROPERTY_IMAGE WHERE PROPERTY_ID=" + property_id + " LIMIT 1",null);
     }
 
 }

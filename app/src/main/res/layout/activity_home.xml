@@ -17,14 +17,22 @@
             android:orientation="vertical" >
 
             <LinearLayout
+                android:id="@+id/home_linear_layout1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_margin="10dp"
+                android:background="#FFFFFF"
+                android:backgroundTint="#C6BE86"
+                android:hapticFeedbackEnabled="false"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:visibility="gone">
 
                 <ImageView
                     android:id="@+id/home_imageView1"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp" />
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center" />
 
                 <TextView
                     android:id="@+id/home_city_textView1"
@@ -47,17 +55,31 @@
                     android:layout_weight="1"
                     android:text="TextView" />
 
+                <Button
+                    android:id="@+id/home_view_details_button1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="More Details" />
+
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/home_linear_layout2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_margin="10dp"
+                android:background="#FFFFFF"
+                android:backgroundTint="#C6BE86"
+                android:hapticFeedbackEnabled="false"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:visibility="gone">
 
                 <ImageView
                     android:id="@+id/home_imageView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp" />
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center" />
 
                 <TextView
                     android:id="@+id/home_city_textView2"
@@ -80,17 +102,31 @@
                     android:layout_weight="1"
                     android:text="TextView" />
 
+                <Button
+                    android:id="@+id/home_view_details_button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="More Details" />
+
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/home_linear_layout3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_margin="10dp"
+                android:background="#FFFFFF"
+                android:backgroundTint="#C6BE86"
+                android:hapticFeedbackEnabled="false"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:visibility="gone">
 
                 <ImageView
                     android:id="@+id/home_imageView3"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp" />
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center" />
 
                 <TextView
                     android:id="@+id/home_city_textView3"
@@ -113,17 +149,31 @@
                     android:layout_weight="1"
                     android:text="TextView" />
 
+                <Button
+                    android:id="@+id/home_view_details_button3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="More Details" />
+
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/home_linear_layout4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_margin="10dp"
+                android:background="#FFFFFF"
+                android:backgroundTint="#C6BE86"
+                android:hapticFeedbackEnabled="false"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:visibility="gone">
 
                 <ImageView
                     android:id="@+id/home_imageView4"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp" />
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center" />
 
                 <TextView
                     android:id="@+id/home_city_textView4"
@@ -146,17 +196,31 @@
                     android:layout_weight="1"
                     android:text="TextView" />
 
+                <Button
+                    android:id="@+id/home_view_details_button4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="More Details" />
+
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/home_linear_layout5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_margin="10dp"
+                android:background="#FFFFFF"
+                android:backgroundTint="#C6BE86"
+                android:hapticFeedbackEnabled="false"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:visibility="gone">
 
                 <ImageView
                     android:id="@+id/home_imageView5"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp" />
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center" />
 
                 <TextView
                     android:id="@+id/home_city_textView5"
@@ -178,6 +242,12 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
+
+                <Button
+                    android:id="@+id/home_view_details_button5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="More Details" />
 
             </LinearLayout>
         </LinearLayout>
