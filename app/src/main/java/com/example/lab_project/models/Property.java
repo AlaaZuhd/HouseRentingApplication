@@ -16,7 +16,7 @@ public class Property {
     private boolean garden;
     private Date availability_date;
     private String description;
-    private RentingAgency property_owner;
+    //private RentingAgency property_owner;
     private int property_id;
     private String renting_agency_owner_id;
 
@@ -24,23 +24,8 @@ public class Property {
     public Property() {
     }
 
-    public Property(String city, int postal_address, double surface_area, int construction_year, int number_of_bedrooms, double rental_price, boolean status, boolean balcony, boolean garden, Date availability_date, String description, RentingAgency property_owner, int property_id) {
-        this.city = city;
-        this.postal_address = postal_address;
-        this.surface_area = surface_area;
-        this.construction_year = construction_year;
-        this.number_of_bedrooms = number_of_bedrooms;
-        this.rental_price = rental_price;
-        this.status = status;
-        this.balcony = balcony;
-        this.garden = garden;
-        this.availability_date = availability_date;
-        this.description = description;
-        this.property_owner = property_owner;
-        this.property_id = property_id;
-    }
 
-    public Property(String city, int postal_address, double surface_area, int construction_year, int number_of_bedrooms, double rental_price, boolean status, boolean balcony, boolean garden, Date availability_date, String description, RentingAgency property_owner) {
+    public Property(String city, int postal_address, double surface_area, int construction_year, int number_of_bedrooms, double rental_price, boolean status, boolean balcony, boolean garden, Date availability_date, String description,  int property_id) {
         this.city = city;
         this.postal_address = postal_address;
         this.surface_area = surface_area;
@@ -52,7 +37,7 @@ public class Property {
         this.garden = garden;
         this.availability_date = availability_date;
         this.description = description;
-        this.property_owner = property_owner;
+        this.property_id = property_id;
     }
 
     public Property(String city, int postal_address, double surface_area, int construction_year, int number_of_bedrooms, double rental_price, boolean status, boolean balcony, boolean garden, Date availability_date, String description, String renting_agency_owner_id) {
@@ -67,10 +52,9 @@ public class Property {
         this.garden = garden;
         this.availability_date = availability_date;
         this.description = description;
-        this.property_owner = property_owner;
-        this.property_id = property_id;
         this.renting_agency_owner_id = renting_agency_owner_id;
     }
+
 
 
     public void setAvailability_date(Date availability_date) {
@@ -176,14 +160,6 @@ public class Property {
         this.description = description;
     }
 
-    public RentingAgency getProperty_owner() {
-        return property_owner;
-    }
-
-    public void setProperty_owner(RentingAgency property_owner) {
-        this.property_owner = property_owner;
-    }
-
     public int getProperty_id() {
         return property_id;
     }
@@ -208,7 +184,6 @@ public class Property {
                 ", garden=" + garden +
                 ", availability_date=" + availability_date +
                 ", description='" + description + '\'' +
-                ", property_owner=" + property_owner +
                 ", property_id=" + property_id +
                 '}';
     }
