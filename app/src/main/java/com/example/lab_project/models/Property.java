@@ -1,7 +1,5 @@
 //Photo
 package com.example.lab_project.models;
-
-
 import java.sql.Date;
 
 public class Property {
@@ -16,6 +14,8 @@ public class Property {
     private boolean garden;
     private Date availability_date;
     private String description;
+    private Date posting_date;
+    private boolean is_active;
     //private RentingAgency property_owner;
     private int property_id;
     private String renting_agency_owner_id;
@@ -40,7 +40,7 @@ public class Property {
         this.property_id = property_id;
     }
 
-    public Property(String city, int postal_address, double surface_area, int construction_year, int number_of_bedrooms, double rental_price, boolean status, boolean balcony, boolean garden, Date availability_date, String description, String renting_agency_owner_id) {
+    public Property(String city, int postal_address, double surface_area, int construction_year, int number_of_bedrooms, double rental_price, boolean status, boolean balcony, boolean garden, Date availability_date, String description, String renting_agency_owner_id, Date posting_date, boolean is_active) {
         this.city = city;
         this.postal_address = postal_address;
         this.surface_area = surface_area;
@@ -53,6 +53,8 @@ public class Property {
         this.availability_date = availability_date;
         this.description = description;
         this.renting_agency_owner_id = renting_agency_owner_id;
+        this.posting_date = posting_date;
+        this.is_active = is_active;
     }
 
 
@@ -120,7 +122,7 @@ public class Property {
     }
 
     public boolean isStatus() {
-        return status;
+        return this.status;
     }
 
     public void setStatus(boolean status) {
@@ -128,7 +130,7 @@ public class Property {
     }
 
     public boolean isBalcony() {
-        return balcony;
+        return this.balcony;
     }
 
     public void setBalcony(boolean balcony) {
@@ -136,7 +138,7 @@ public class Property {
     }
 
     public boolean isGarden() {
-        return garden;
+        return this.garden;
     }
 
     public void setGarden(boolean garden) {
@@ -168,6 +170,22 @@ public class Property {
         this.property_id = property_id;
     }
 
+    public Date getPosting_date() {
+        return posting_date;
+    }
+
+    public void setPosting_date(Date posting_date) {
+        this.posting_date = posting_date;
+    }
+
+    public boolean isIs_active() {
+        return is_active;
+    }
+
+    public void setIs_active(boolean is_active) {
+        this.is_active = is_active;
+    }
+
     //toString method
 
     @Override
@@ -187,4 +205,5 @@ public class Property {
                 ", property_id=" + property_id +
                 '}';
     }
+
 }

@@ -3,6 +3,46 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/drawable/animation.xml" value="0.14739583333333334" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/drawable/background_with_shadow.xml" value="0.2564814814814815" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/drawable/ic_baseline_cloud_upload_24.xml" value="0.13541666666666666" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/drawable/ic_notification.xml" value="0.2911458333333333" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/drawable/ic_notification_2.xml" value="0.2911458333333333" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/drawable/ic_notifications.xml" value="0.2911458333333333" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/drawable/profile_icon.xml" value="0.15625" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/drawable/request_details.xml" value="0.2866666666666667" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/drawable/scalling_falgs.xml" value="0.2911458333333333" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/drawable/search_icon.xml" value="0.2324074074074074" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/drawable/signup_accept_policy_icon.xml" value="0.2324074074074074" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/drawable/singup_buttons_style.xml" value="0.21145833333333333" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/layout/activity_agency_history.xml" value="0.19927536231884058" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/layout/activity_edit_list_of_properties.xml" value="0.14270833333333333" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/layout/activity_home.xml" value="0.1337386018237082" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/layout/activity_login.xml" value="0.15081521739130435" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/layout/activity_main.xml" value="0.1484375" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/layout/activity_navigation_drawer.xml" value="0.2" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/layout/activity_notification.xml" value="0.20697463768115942" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/layout/activity_post_property.xml" value="0.20199275362318841" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/layout/activity_profile.xml" value="0.152" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/layout/activity_search.xml" value="0.14010416666666667" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/layout/activity_signup.xml" value="0.14010416666666667" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/layout/activity_tenant_history.xml" value="0.14010416666666667" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/layout/activity_welcome.xml" value="0.14673913043478262" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/layout/fragment_agency_history.xml" value="0.19927536231884058" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/layout/fragment_no_results_found.xml" value="0.19927536231884058" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/layout/fragment_notification.xml" value="0.20697463768115942" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/layout/fragment_property_summary.xml" value="0.14270833333333333" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/layout/fragment_renting_agency_profile.xml" value="0.15896739130434784" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/layout/fragment_tenant_history.xml" value="0.15489130434782608" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/layout/fragment_tenant_profile.xml" value="0.12604166666666666" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/layout/navigation_menu_header.xml" value="0.11927083333333334" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/layout/notification_bottom_sheet_dialog.xml" value="0.19114583333333332" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/layout/property_info_dialog.xml" value="0.13395225464190982" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/layout/renting_period_dialog.xml" value="0.1171875" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/layout/request_details_layout.xml" value="0.22735507246376813" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/layout/slideritem.xml" value="0.2536231884057971" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/layout/test_popup.xml" value="0.11548913043478261" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/26_proj/HouseRentingApplication/app/src/main/res/menu/navigation_menu.xml" value="0.275" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/HouseRentingApp-master/app/src/main/res/layout/activity_login.xml" value="0.13541666666666666" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/HouseRentingApp-master/app/src/main/res/layout/activity_main.xml" value="0.12447916666666667" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/HouseRentingApp-master/app/src/main/res/layout/activity_signup.xml" value="0.1337386018237082" />

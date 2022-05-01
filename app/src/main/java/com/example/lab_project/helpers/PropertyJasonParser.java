@@ -1,4 +1,4 @@
-package com.example.lab_project;
+package com.example.lab_project.helpers;
 
 import com.example.lab_project.models.Property;
 
@@ -6,6 +6,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +31,9 @@ public class PropertyJasonParser {
                 property.setGarden(jsonObject.getBoolean("garden"));
                 property.setAvailability_date(jsonObject.getString("availability_date"));
                 property.setDescription(jsonObject.getString("description"));
+                property.setPosting_date(Date.valueOf(jsonObject.getString("posting_date")));
+                property.setIs_active(jsonObject.getBoolean("is_active"));
+
 
 
                 properties.add(property);

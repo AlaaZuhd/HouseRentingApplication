@@ -1,4 +1,4 @@
-package com.example.lab_project;
+package com.example.lab_project.helpers;
 import android.content.Context;
 import android.content.SharedPreferences;
 public class SharedPrefManager {
@@ -7,7 +7,7 @@ public class SharedPrefManager {
     private static SharedPrefManager ourInstance = null;
     private static SharedPreferences sharedPreferences = null;
     private SharedPreferences.Editor editor = null;
-    static SharedPrefManager getInstance(Context context) {
+    public static SharedPrefManager getInstance(Context context) {
         if (ourInstance != null) {
             return ourInstance;
         }
@@ -23,7 +23,20 @@ public class SharedPrefManager {
         editor.putString(key, value);
         return editor.commit();
     }
+    public boolean writeInt(String key, int value) {
+        editor.putInt(key, value);
+        return editor.commit();
+    }
     public String readString(String key, String defaultValue) {
         return sharedPreferences.getString(key, defaultValue);
     }
+    public int readInt(String key, int defaultValue) {
+        return sharedPreferences.getInt(key, defaultValue);
+    }
+    public void removeKey(String key){
+        editor.remove(key);
+        editor.apply();
+        editor.commit();
+    }
+
 }

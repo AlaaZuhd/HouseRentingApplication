@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/notification_root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F1F1"
+    android:orientation="vertical"
+    tools:context=".NotificationActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/notification_toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#6200EE"
+            android:isScrollContainer="true"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/notification_relativeLayout"
+            app:subtitleTextColor="#882727"
+            app:titleTextColor="#B53E3E" />
+
+        <RelativeLayout
+            android:id="@+id/notification_relativeLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView22"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/notification_arrowback_button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:padding="5dp" />
+
+            <ImageView
+                android:id="@+id/notification_arrowback"
+                android:layout_width="82dp"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                app:srcCompat="@drawable/arrow_back" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="233dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="84dp"
+            android:gravity="center|left"
+            android:text="Notifications"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/notification_relativeLayout"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <Button
+        android:id="@+id/notification_delete_all_button"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_marginRight="5dp"
+        android:padding="10dp"
+        android:text="Delete All notifications" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/notification_approve_details_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/notification_approve_1_textView"
+            android:layout_width="357dp"
+            android:layout_height="91dp"
+            android:layout_marginStart="31dp"
+            android:layout_marginTop="91dp"
+            android:layout_marginEnd="31dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="Congratulations, Yor request for renting Property with ID"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/notification_approve_details_property_id_textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/notification_approve_details_property_id_textView"
+            android:layout_width="395dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="18dp"
+            android:gravity="center"
+            android:text="Property_id"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/notification_approve_2_textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/notification_approve_1_textView" />
+
+        <TextView
+            android:id="@+id/notification_approve_2_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="14dp"
+            android:gravity="center"
+            android:text="has been approved"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/notification_approve_imageView"
+            app:layout_constraintEnd_toEndOf="@+id/notification_approve_imageView"
+            app:layout_constraintTop_toBottomOf="@+id/notification_approve_details_property_id_textView" />
+
+        <Button
+            android:id="@+id/notification_approve_details_see_rented_property_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="82dp"
+            android:text="try Renting another Propert"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/notification_approve_imageView" />
+
+        <ImageView
+            android:id="@+id/notification_approve_imageView"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="49dp"
+            app:layout_constraintBottom_toTopOf="@+id/notification_approve_details_see_rented_property_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/notification_approve_2_textView"
+            app:srcCompat="@drawable/approved" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/notification_reject_details_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="357dp"
+            android:layout_height="91dp"
+            android:layout_marginStart="31dp"
+            android:layout_marginTop="91dp"
+            android:layout_marginEnd="31dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="Unfortunately, Yor request for renting Property with ID"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/notification_reject_details_property_id_textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/notification_reject_details_property_id_textView"
+            android:layout_width="395dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="18dp"
+            android:gravity="center"
+            android:text="Property_id"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="14dp"
+            android:gravity="center"
+            android:text="has been rejected"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/notification_reject_details_property_id_textView" />
+
+        <Button
+            android:id="@+id/notification_reject_details_try_renting_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="82dp"
+            android:text="try Renting another Propert"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="49dp"
+            app:layout_constraintBottom_toTopOf="@+id/notification_reject_details_try_renting_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView20"
+            app:srcCompat="@drawable/rejected" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/notification_apply_request_details_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="5dp"
+        android:paddingTop="30dp"
+        android:paddingRight="5dp"
+        android:visibility="gone">
+
+        <include layout="@layout/request_details_layout"></include>
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/notification_tenant_id_textView"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="20dp"-->
+        <!--            android:padding="5dp"-->
+        <!--            android:text="Requester_ID: " />-->
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/notification_property_id_textView"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="20dp"-->
+        <!--            android:padding="5dp"-->
+        <!--            android:text="Property_ID: " />-->
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/notification_request_date_textView"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="20dp"-->
+        <!--            android:padding="5dp"-->
+        <!--            android:text="Request Date: " />-->
+
+        <Button
+            android:id="@+id/notification_view_tenant_profile_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="5dp"
+            android:text="View Tenant "
+            app:cornerRadius="50dp" />
+
+        <Button
+            android:id="@+id/notification_view_tenant_renting_history_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="5dp"
+            android:text="View Tenant Renting History"
+            app:cornerRadius="50dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/notification_approve_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:layout_weight="1"
+                android:text="Approve"
+                app:cornerRadius="50dp" />
+
+            <Button
+                android:id="@+id/notification_reject_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_weight="1"
+                android:text="Reject"
+                app:cornerRadius="50dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/notification_close_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginRight="30dp"
+            android:text="Close"
+            app:cornerRadius="50dp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/notification_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/notification_scrollview_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+</LinearLayout>

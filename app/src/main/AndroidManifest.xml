@@ -15,6 +15,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Lab_Project">
         <activity
+            android:name=".NotificationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AgencyHistoryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".WelcomeActivity"
+            android:exported="true"
+            android:label="Welcome">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".TenantHistoryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".EditListOfPropertiesActivity"
+            android:exported="true" />
+        <activity
+            android:name=".PostPropertyActivity"
+            android:exported="true" />
+        <activity
             android:name=".SearchActivity"
             android:exported="true" />
         <activity
@@ -38,7 +66,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
     </application>

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -13,10 +14,15 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+import com.example.lab_project.helpers.AESEncryption_Decryption;
+import com.example.lab_project.helpers.DataBaseHelper;
+import com.example.lab_project.helpers.SharedPrefManager;
+
 public class LoginActivity extends AppCompatActivity {
     SharedPrefManager sharedPrefManager;
     EditText email;
     EditText password;
+    Button   search;
     String editText_default_color;
 
     Intent intent;
@@ -27,14 +33,21 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         sharedPrefManager =SharedPrefManager.getInstance(this);
         setContentView(R.layout.activity_login);
+
+
         email=(EditText) findViewById(R.id.login_email);
         password=(EditText)findViewById(R.id.login_password);
+        Button sign_in = (Button)findViewById(R.id.login_sign_in_button);
+        Button sign_up = (Button)findViewById(R.id.login_sign_up_button);
+        search = (Button) findViewById(R.id.login_search_button);
+
         //If there are any email in the shared preference-> display it
         String shared_pref_email = sharedPrefManager.readString("email_address","noValue");
         if (!shared_pref_email.equals("noValue")){
             email.setText(shared_pref_email);
         }
         DataBaseHelper dataBaseHelper =new DataBaseHelper(LoginActivity.this,"Lab_Project.db",null,1);
+        dataBaseHelper.get_tables_names();
         //Adding a random tenant:
 //        Tenant new_tenant = new Tenant("test@gmail.com","alaa","rawan","Female","123","123","ads",123,"12",12,"da","asd","052");
 //        dataBaseHelper.insert_tenant(new_tenant);
@@ -59,17 +72,12 @@ public class LoginActivity extends AppCompatActivity {
 
 
         //sign in button handling
-        Button sign_in = (Button)findViewById(R.id.login_sign_in_button);
         sign_in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Cursor tempp = dataBaseHelper.get_all_renting_agencies();
                 while (tempp.moveToNext()) { //User found
-                    System.out.println("Email: " + tempp.getString(0) + ", password: " + tempp.getString(2));
                 }
-
-
                 if(email.getText().toString().equals("")){
                     email.setError("Wrong Email");
                 }
@@ -77,38 +85,59 @@ public class LoginActivity extends AppCompatActivity {
                     password.setError("Wrong Password");
                 }
                 else {
-                    System.out.println("Email is: " + email.getText().toString() + ", password is: " + password.getText().toString());
                     //Connect to database and get password and compare it
                     //check if a tenant or agency
                     Cursor temp = dataBaseHelper.get_tenant(email.getText().toString());
                     int flag = 0;
                     while (temp.moveToNext()) { //User found
-                        if (password.getText().toString().equals(temp.getString(4))) {
-                            System.out.println("You can Enter as tenant!");
-                            //move to home layout as tenant
-                            intent = new Intent(LoginActivity.this, NavigationDrawerActivity.class);
-                            LoginActivity.this.startActivity(intent);
-                            LoginActivity.this.finish();
-                        } else { //wrong password
-                            //password_error.setVisibility(View.VISIBLE);
-                            password.setError("Wrong Password");
-                            password.setBackgroundColor(Color.parseColor("#66FF0000"));
+                        try {
+                            String decrypted_password = AESEncryption_Decryption.decrypt(temp.getString(4));
+                            if (password.getText().toString().equals(decrypted_password)) {
+                                //move to home layout as tenant
+                                Intent intent = getIntent();
+                                boolean is_back = intent.getBooleanExtra("Back", false);
+                                authenticate_user(email.getText().toString(), 0);
+                                if(is_back){
+                                    finish();
+                                }else {
+                                    intent = new Intent(LoginActivity.this, NavigationDrawerActivity.class);
+                                    LoginActivity.this.startActivity(intent);
+                                    LoginActivity.this.finish();
+                                }
+                            } else { //wrong password
+                                //password_error.setVisibility(View.VISIBLE);
+                                password.setError("Wrong Password");
+                                password.setBackgroundColor(Color.parseColor("#66FF0000"));
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
                         }
                         flag = 1;
                     }
                     if (flag == 0) {
                         temp = dataBaseHelper.get_renting_agency(email.getText().toString());
                         while (temp.moveToNext()) { //User found
-                            if (password.getText().toString().equals(temp.getString(2))) {
-                                System.out.println("You can Enter as renting agency!");
-                                //move to home layout as renting agency
-                                intent = new Intent(LoginActivity.this, NavigationDrawerActivity.class);
-                                LoginActivity.this.startActivity(intent);
-                                LoginActivity.this.finish();
-                            } else { //wrong password
-                                //password_error.setVisibility(View.VISIBLE);
-                                password.setError("Wrong Password");
-                                password.setBackgroundColor(Color.parseColor("#66FF0000"));
+                            try {
+                                String decrypted_password = AESEncryption_Decryption.decrypt(temp.getString(2));
+                                if (password.getText().toString().equals(decrypted_password)) {
+                                    authenticate_user(email.getText().toString(), 1);
+                                    //move to home layout as renting agency
+                                    Intent intent = getIntent();
+                                    boolean is_back = intent.getBooleanExtra("Back", false);
+                                    if(is_back){
+                                        finish();
+                                    } else {
+                                        intent = new Intent(LoginActivity.this, NavigationDrawerActivity.class);
+                                        LoginActivity.this.startActivity(intent);
+                                        LoginActivity.this.finish();
+                                    }
+                                } else { //wrong password
+                                    //password_error.setVisibility(View.VISIBLE);
+                                    password.setError("Wrong Password");
+                                    password.setBackgroundColor(Color.parseColor("#66FF0000"));
+                                }
+                            } catch (Exception e) {
+                                e.printStackTrace();
                             }
                             flag = 1;
                         }
@@ -118,20 +147,25 @@ public class LoginActivity extends AppCompatActivity {
                         email.setBackgroundColor(Color.parseColor("#66FF0000"));
                     }
                 }
-                //if valid->go to home layout
-                //if not->declare error
             }
         });
 
-        Button sign_up = (Button)findViewById(R.id.login_sign_up_button);
         sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 intent = new Intent(LoginActivity.this, SignupActivity.class);
                 LoginActivity.this.startActivity(intent);
-                LoginActivity.this.finish();
             }
         });
+
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intent = new Intent(LoginActivity.this, SearchActivity.class);
+                LoginActivity.this.startActivity(intent);
+            }
+        });
+
     }
     public void OnRememberMeClicked(View view) {
         // Is the view now checked?
@@ -145,4 +179,10 @@ public class LoginActivity extends AppCompatActivity {
                     break;
         }
     }
+
+    public void authenticate_user(String username, int type){
+        sharedPrefManager.writeString("username", username);
+        sharedPrefManager.writeInt("type", type);
+    }
+
 }

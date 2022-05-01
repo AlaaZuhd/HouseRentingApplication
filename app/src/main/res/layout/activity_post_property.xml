@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F1F1"
+    android:orientation="vertical"
+    tools:context=".PostPropertyActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/post_toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#6200EE"
+            android:isScrollContainer="true"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/post_relativeLayout"
+            app:subtitleTextColor="#882727"
+            app:titleTextColor="#B53E3E" />
+
+        <RelativeLayout
+            android:id="@+id/post_relativeLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView22"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/post_arrowback_button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:padding="5dp" />
+
+            <ImageView
+                android:id="@+id/post_arrowback"
+                android:layout_width="82dp"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                app:srcCompat="@drawable/arrow_back" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="233dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="84dp"
+            android:gravity="center|left"
+            android:text="Post Property"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/post_relativeLayout"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/post_property_textview1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="Lets post a new property!"
+        android:textColor="#6200EE"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/post_property_textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="Please fill as much as you can of the following fields to manage your property to be rented faster."
+        android:textColor="#6200EE"
+        android:textSize="16sp"
+        android:textStyle="italic" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/post_property_city_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="6dp"
+                    android:text="City: "
+                    android:textColor="#000000"
+                    android:textColorHint="#000000"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/post_property_city_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#FFFFFF"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:hint="City Name"
+                    android:inputType="textPersonName"
+                    android:padding="6dp"
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/post_property_number_of_bedrooms_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="6dp"
+                    android:text="Number of Bedrooms:"
+                    android:textColor="#000000"
+                    android:textColorHint="#000000"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/post_property_number_of_bedrooms_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#FFFFFF"
+                    android:ems="10"
+                    android:hint="Number of bedrooms"
+                    android:inputType="number"
+                    android:padding="6dp"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/post_property_postal_address_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="6dp"
+                    android:text="Postal Address: "
+                    android:textColor="#000000"
+                    android:textColorHint="#000000"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/post_property_postal_address_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#FFFFFF"
+                    android:ems="10"
+                    android:hint="Postal address as Number"
+                    android:inputType="textPostalAddress"
+                    android:padding="6dp"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/post_property_surface_area_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="6dp"
+                    android:text="Surface Area: "
+                    android:textColor="#000000"
+                    android:textColorHint="#000000"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/post_property_surface_area_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#FFFFFF"
+                    android:ems="10"
+                    android:hint="Float Number"
+                    android:inputType="numberDecimal"
+                    android:padding="6dp"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/post_property_construction_year_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="6dp"
+                    android:text="Construction Year: "
+                    android:textColor="#000000"
+                    android:textColorHint="#000000"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/post_property_construction_year_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#FFFFFF"
+                    android:ems="10"
+                    android:hint="Number"
+                    android:inputType="number"
+                    android:padding="6dp"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/post_property_rental_price_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="6dp"
+                    android:text="Rental Price: "
+                    android:textColor="#000000"
+                    android:textColorHint="#000000"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/post_property_rental_price_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#FFFFFF"
+                    android:ems="10"
+                    android:hint="Rental Price"
+                    android:inputType="numberDecimal"
+                    android:padding="6dp"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/post_property_balcony_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="6dp"
+                    android:text="Has a Balcony? "
+                    android:textColor="#000000"
+                    android:textColorHint="#000000"
+                    android:textStyle="bold" />
+
+                <Switch
+                    android:id="@+id/post_property_balcony_switch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="false"
+                    android:padding="6dp"
+                    android:text="No" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/post_property_garden_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="6dp"
+                    android:text="Has a Garden? "
+                    android:textColor="#000000"
+                    android:textColorHint="#000000"
+                    android:textStyle="bold" />
+
+                <Switch
+                    android:id="@+id/post_property_garden_switch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="false"
+                    android:padding="6dp"
+                    android:text="No" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/post_property_status_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="6dp"
+                    android:text="Property Status: "
+                    android:textColor="#000000"
+                    android:textColorHint="#000000"
+                    android:textStyle="bold" />
+
+                <Switch
+                    android:id="@+id/post_property_status_switch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="false"
+                    android:padding="6dp"
+                    android:showText="false"
+                    android:splitTrack="false"
+                    android:text="UnFinished"
+                    android:textOff="UnFinished"
+                    android:textOn="Finished"
+                    tools:checked="false" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/post_property_availability_date_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/post_property_availability_date_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="6dp"
+                    android:text="Availability Date:"
+                    android:textColor="#000000"
+                    android:textColorHint="#000000"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/button3post_property_availability_date_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="6dp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:text="Select Date" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/post_property_description_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="6dp"
+                    android:text="Description: "
+                    android:textColor="#000000"
+                    android:textColorHint="#000000"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/post_property_description_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#FFFFFF"
+                    android:editable="false"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="Small paragraph to describe your property (up to 200 words)"
+                    android:inputType="textMultiLine"
+                    android:maxLines="7"
+                    android:minLines="3"
+                    android:padding="6dp"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/post_property_upload_images_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+
+                <TextView
+                    android:id="@+id/post_property_upload_image_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Upload Images for the property"
+                    android:textColor="#000000"
+                    android:textColorHint="#000000"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/post_property_upload_image_button"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:text="Upload Image"
+                    app:icon="@drawable/ic_baseline_cloud_upload_24" />
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/post_property_post_property_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Post the Property" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
