@@ -90,6 +90,7 @@ public class LoginActivity extends AppCompatActivity {
                     Cursor temp = dataBaseHelper.get_tenant(email.getText().toString());
                     int flag = 0;
                     while (temp.moveToNext()) { //User found
+<<<<<<< HEAD
                         try {
                             String decrypted_password = AESEncryption_Decryption.decrypt(temp.getString(4));
                             if (password.getText().toString().equals(decrypted_password)) {
@@ -111,12 +112,31 @@ public class LoginActivity extends AppCompatActivity {
                             }
                         } catch (Exception e) {
                             e.printStackTrace();
+=======
+                        System.out.println("Tenant");
+                        if (password.getText().toString().equals(temp.getString(4))) {
+                            System.out.println("You can Enter as tenant!");
+                            //move to home layout as tenant
+//                            intent = new Intent(LoginActivity.this, NavigationDrawerActivity.class);
+//                            LoginActivity.this.startActivity(intent);
+//                            LoginActivity.this.finish();
+
+                            intent = new Intent(LoginActivity.this, HomeActivity.class);
+                            LoginActivity.this.startActivity(intent);
+                            LoginActivity.this.finish();
+                        } else { //wrong password
+                            //password_error.setVisibility(View.VISIBLE);
+                            password.setError("Wrong Password");
+                            password.setBackgroundColor(Color.parseColor("#66FF0000"));
+>>>>>>> b93fd345c720ed4123daa669fe976f07866e2b1b
                         }
                         flag = 1;
                     }
                     if (flag == 0) {
+                        System.out.println("renting agency");
                         temp = dataBaseHelper.get_renting_agency(email.getText().toString());
                         while (temp.moveToNext()) { //User found
+<<<<<<< HEAD
                             try {
                                 String decrypted_password = AESEncryption_Decryption.decrypt(temp.getString(2));
                                 if (password.getText().toString().equals(decrypted_password)) {
@@ -138,6 +158,22 @@ public class LoginActivity extends AppCompatActivity {
                                 }
                             } catch (Exception e) {
                                 e.printStackTrace();
+=======
+                            System.out.println("pass: "+ password.getText().toString() + ", real pass: " + temp.getString(2));
+                            if (password.getText().toString().equals(temp.getString(2))) {
+                                System.out.println("You can Enter as renting agency!");
+                                //move to home layout as renting agency
+//                                intent = new Intent(LoginActivity.this, NavigationDrawerActivity.class);
+//                                LoginActivity.this.startActivity(intent);
+//                                LoginActivity.this.finish();
+                                intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                LoginActivity.this.startActivity(intent);
+                                LoginActivity.this.finish();
+                            } else { //wrong password
+                                //password_error.setVisibility(View.VISIBLE);
+                                password.setError("Wrong Password");
+                                password.setBackgroundColor(Color.parseColor("#66FF0000"));
+>>>>>>> b93fd345c720ed4123daa669fe976f07866e2b1b
                             }
                             flag = 1;
                         }

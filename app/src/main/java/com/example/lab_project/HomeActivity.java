@@ -3,6 +3,7 @@ package com.example.lab_project;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+<<<<<<< HEAD
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -11,18 +12,32 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+=======
+import android.content.Intent;
+import android.content.res.Resources;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.view.View;
+>>>>>>> b93fd345c720ed4123daa669fe976f07866e2b1b
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
+<<<<<<< HEAD
 import android.widget.Toast;
 
 import com.example.lab_project.helpers.DataBaseHelper;
 import com.example.lab_project.helpers.SharedPrefManager;
 import com.example.lab_project.helpers.Utils;
 import com.example.lab_project.helpers.slideradapter;
+=======
+>>>>>>> b93fd345c720ed4123daa669fe976f07866e2b1b
 import com.example.lab_project.models.Image;
 import com.example.lab_project.models.Property;
 
@@ -50,16 +65,30 @@ public class HomeActivity extends AppCompatActivity {
     TextView property_number_of_bedrooms[] = new TextView[5];
     Button property_view[] = new Button[5];//
     LinearLayout linear_layouts[] = new LinearLayout[5];
+<<<<<<< HEAD
     SliderView sliderView;
+=======
+>>>>>>> b93fd345c720ed4123daa669fe976f07866e2b1b
 
     final ArrayList<Image> Images = new ArrayList<>();
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> b93fd345c720ed4123daa669fe976f07866e2b1b
     @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+<<<<<<< HEAD
+=======
+//        Property new_property = new Property("TTTT",344,34.4,2002,5,20.2,false,true,true, Date.valueOf("2015-03-31"),"hhh", "y@y.com");
+//        dataBaseHelper.insert_property(new_property);
+>>>>>>> b93fd345c720ed4123daa669fe976f07866e2b1b
 
 
 
@@ -83,9 +112,47 @@ public class HomeActivity extends AppCompatActivity {
             properties.add(property);
         }
 
+
         int properties_length = properties.size();
         Resources res = getResources();
         for (int i=0; i<properties.size(); i++){
+<<<<<<< HEAD
+=======
+
+            int id = res.getIdentifier("home_imageView"+(i+1), "id", getPackageName());
+            property_image[i] = (ImageView)findViewById(id);
+            id = res.getIdentifier("home_city_textView"+(i+1), "id", getPackageName());
+            property_city[i] = (TextView)findViewById(id);
+            id = res.getIdentifier("home_availability_date_textView"+(i+1), "id", getPackageName());
+            System.out.println("pagckge name: " + getPackageName() + ", id: " + id);
+            property_availability_date[i] = (TextView)findViewById(id);
+            id = res.getIdentifier("home_number_of_bedrooms_textView"+(i+1), "id", getPackageName());
+            property_number_of_bedrooms[i] = (TextView)findViewById(id);
+            id = res.getIdentifier("home_number_of_bedrooms_textView"+(i+1), "id", getPackageName());
+            // load the one img for the property.
+            temp = dataBaseHelper.get_one_image_for_property(properties.get(i).getProperty_id());
+            Image img = new Image();
+            int flag=0;
+            while (temp.moveToNext()) { //User found
+                img.setImage(BitmapFactory.decodeByteArray(temp.getBlob(0), 0, temp.getBlob(0).length));
+                flag=1;
+            }
+
+            if(flag == 1){
+                property_image[i].setImageBitmap(img.getImage());
+            } else{
+                // set an img from our menu
+            }
+
+            //Bitmap bitmap = BitmapFactory.decodeByteArray(bitmapdata, 0, bitmapdata.length);
+            property_city[i].setText("City: " + properties.get(0).getCity());
+            property_availability_date[i].setText("Available date: " + properties.get(0).getAvailability_date());
+            property_number_of_bedrooms[i].setText("Number of Bedrooms: " + properties.get(0).getNumber_of_bedrooms());
+
+            id = res.getIdentifier("home_linear_layout"+(i+1), "id", getPackageName());
+            linear_layouts[i] = (LinearLayout) findViewById(id);
+            linear_layouts[i].setVisibility(View.VISIBLE);
+>>>>>>> b93fd345c720ed4123daa669fe976f07866e2b1b
 
             int id = res.getIdentifier("home_imageView"+(i+1), "id", getPackageName());
             property_image[i] = (ImageView)findViewById(id);
